@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>GD Solutions | Homepage concept</title>
+<meta name="description" content="Illustrative homepage concept. Not a live website.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 rx=%226%22 fill=%22%2318488f%22/%3E%3Cpath d=%22M6 24 Q16 4 26 24%22 stroke=%22%23e7555d%22 stroke-width=%223%22 fill=%22none%22/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Spectral:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#18488f;
+  --navy-deep:#0f2b55;
+  --signal:#d9434c;
+  --signal-soft:#fbe7e8;
+  --paper:#ffffff;
+  --mist:#eef2f8;
+  --line:#d3dbe7;
+  --ink:#16213a;
+  --ink-soft:#4a5671;
+  --wrap:1160px;
+  --sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  --serif:"Spectral",Georgia,"Times New Roman",serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.6;font-size:17px;-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto;display:block}
+h1,h2,h3{margin:0 0 .5em;line-height:1.15;color:var(--ink)}
+h1,h2{font-family:var(--serif);font-weight:600;letter-spacing:-0.01em}
+h1{font-size:clamp(2.3rem,5.2vw,3.9rem)}
+h2{font-size:clamp(1.75rem,3.4vw,2.6rem)}
+h3{font-size:1.12rem;font-weight:600}
+p{margin:0 0 1em;color:var(--ink-soft)}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+.section{padding:clamp(64px,9vw,112px) 0}
+.kicker{font-size:.95rem;font-weight:500;color:var(--navy);margin:0 0 .9em}
+.lede{font-size:1.18rem;max-width:56ch}
+
+a:focus-visible,button:focus-visible,[role=button]:focus-visible{outline:3px solid var(--signal);outline-offset:3px;border-radius:4px}
+.skip{position:absolute;left:-9999px}
+.skip:focus{left:16px;top:16px;z-index:200;background:#fff;padding:12px 18px;border-radius:6px;box-shadow:0 4px 20px rgba(0,0,0,.18)}
+
+.btn{display:inline-block;padding:14px 24px;border-radius:4px;font-weight:600;font-size:1rem;cursor:default;border:2px solid transparent;font-family:inherit;line-height:1.2}
+.btn--primary{background:var(--signal);color:#fff}
+.btn--line{border-color:var(--navy);color:var(--navy);background:transparent}
+.btn--light{background:#fff;color:var(--navy-deep)}
+
+/* Header */
+.hdr{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.hdr__in{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:78px}
+.brand img{width:200px}
+.nav{display:flex;align-items:center;gap:30px}
+.nav a{text-decoration:none;color:var(--ink);font-weight:500;font-size:.97rem}
+.nav a:hover{color:var(--navy)}
+.nav .phone{color:var(--navy);font-weight:600}
+.burger{display:none;background:none;border:1px solid var(--line);border-radius:6px;padding:9px 11px;cursor:pointer}
+.burger span{display:block;width:20px;height:2px;background:var(--ink);margin:4px 0}
+@media(max-width:900px){
+  .burger{display:block}
+  .brand img{width:170px}
+  .nav{position:fixed;inset:78px 0 auto 0;flex-direction:column;align-items:stretch;gap:0;background:#fff;border-bottom:1px solid var(--line);padding:8px 24px 24px;display:none}
+  .nav[data-open="true"]{display:flex}
+  .nav a{padding:14px 0;border-bottom:1px solid var(--line)}
+  .nav .btn{margin-top:16px;text-align:center}
+}
+
+/* Hero */
+.hero{padding:clamp(56px,8vw,100px) 0 clamp(56px,7vw,88px);background:linear-gradient(180deg,#fff 0%,var(--mist) 100%)}
+.hero__grid{display:grid;grid-template-columns:1.05fr 1fr;gap:56px;align-items:center}
+.hero h1{max-width:14ch}
+.hero__cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}
+.hero__claim{margin-top:40px;padding-top:22px;border-top:1px solid var(--line);display:flex;gap:18px;align-items:baseline;max-width:520px}
+.hero__claim strong{font-family:var(--serif);font-size:2.4rem;color:var(--navy);line-height:1;white-space:nowrap}
+.hero__claim span{color:var(--ink-soft);font-size:.98rem}
+.map{background:#fff;border:1px solid var(--line);border-radius:8px;padding:22px 20px 16px}
+.map__cap{display:flex;justify-content:space-between;font-size:.85rem;color:var(--ink-soft);margin-top:8px;gap:12px;flex-wrap:wrap}
+.map__cap i{font-style:normal;display:inline-flex;align-items:center;gap:6px}
+.dot{width:10px;height:10px;border-radius:50%;display:inline-block}
+.map svg{width:100%;height:auto;overflow:visible}
+.flow-new{stroke-dasharray:6 6;animation:dash 1.2s linear infinite}
+@keyframes dash{to{stroke-dashoffset:-24}}
+@media(max-width:900px){.hero__grid{grid-template-columns:1fr;gap:40px}}
+
+/* Method */
+.method__head{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:end;margin-bottom:48px}
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:0;counter-reset:s;border-top:2px solid var(--navy)}
+.steps li{counter-increment:s;padding:26px 24px 8px 0;position:relative}
+.steps li+li{padding-left:24px;border-left:1px solid var(--line)}
+.steps li::before{content:counter(s);font-family:var(--serif);font-size:1.9rem;color:var(--signal);display:block;margin-bottom:10px;line-height:1}
+@media(max-width:900px){
+  .method__head{grid-template-columns:1fr;gap:12px}
+  .steps{grid-template-columns:1fr 1fr}
+  .steps li:nth-child(3){padding-left:0;border-left:none}
+  .steps li:nth-child(n+3){border-top:1px solid var(--line)}
+}
+@media(max-width:560px){
+  .steps{grid-template-columns:1fr}
+  .steps li,.steps li+li{padding-left:0;border-left:none}
+  .steps li+li{border-top:1px solid var(--line)}
+}
+
+/* Services */
+.services{background:var(--navy-deep);color:#fff}
+.services h2,.services h3{color:#fff}
+.services p{color:#c9d4e6}
+.services .kicker{color:#f2a2a6}
+.svc{display:grid;grid-template-columns:1fr 1.4fr;gap:56px;align-items:start}
+.svc__list{list-style:none;margin:0;padding:0}
+.svc__list li{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:28px;padding:24px 0;border-top:1px solid rgba(255,255,255,.18)}
+.svc__list li:last-child{border-bottom:1px solid rgba(255,255,255,.18)}
+.svc__list h3{margin:0;font-size:1.15rem}
+.svc__list p{margin:0;font-size:.98rem}
+.svc__also{margin-top:28px;font-size:.95rem}
+@media(max-width:900px){.svc{grid-template-columns:1fr;gap:24px}.svc__list li{grid-template-columns:1fr;gap:8px}}
+
+/* Proof */
+.proof__grid{display:grid;grid-template-columns:1.2fr 1fr;gap:56px;margin-top:44px}
+.quote-main{margin:0;padding-left:28px;border-left:3px solid var(--signal)}
+.quote-main p{font-family:var(--serif);font-size:clamp(1.3rem,2.2vw,1.65rem);line-height:1.4;color:var(--ink);font-weight:500}
+.quote-main footer,.quote footer{font-size:.93rem;color:var(--ink-soft)}
+.quote-main footer b,.quote footer b{color:var(--ink);font-weight:600}
+.quotes{display:grid;gap:28px}
+.quote{margin:0;padding-bottom:24px;border-bottom:1px solid var(--line)}
+.quote:last-child{border-bottom:none}
+.quote p{color:var(--ink);margin-bottom:.6em}
+.orgs{margin-top:56px;padding:22px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);display:flex;flex-wrap:wrap;gap:12px 36px;align-items:center}
+.orgs span{font-weight:600;color:var(--ink-soft);font-size:.98rem}
+.orgs .lbl{font-weight:400;color:var(--ink-soft);font-size:.9rem}
+@media(max-width:900px){.proof__grid{grid-template-columns:1fr;gap:40px}}
+
+/* Conversion */
+.cta{background:var(--mist);border-radius:8px;padding:clamp(32px,5vw,60px);display:grid;grid-template-columns:auto 1fr;gap:40px;align-items:center}
+.cta img{width:180px;border-radius:6px}
+.cta h2{margin-bottom:.35em}
+.cta__row{display:flex;gap:14px;flex-wrap:wrap;margin-top:22px}
+@media(max-width:700px){.cta{grid-template-columns:1fr}.cta img{width:140px}}
+
+/* Footer */
+.ftr{background:var(--ink);color:#d6deeb;padding:52px 0 0}
+.ftr__cols{display:grid;gap:28px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));padding-bottom:36px}
+.ftr h3{font-size:.95rem;color:#fff;margin-bottom:12px}
+.ftr p,.ftr li{color:#b9c4d6;font-size:.95rem}
+.ftr ul{list-style:none;margin:0;padding:0}
+.ftr li{margin-bottom:8px}
+.ftr a{color:#fff;text-decoration:none}
+.ftr a:hover{text-decoration:underline}
+.disclosure{border-top:1px solid rgba(255,255,255,.18);padding:20px 0 28px;font-size:.92rem;color:#d6deeb}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="hdr">
+  <div class="wrap hdr__in">
+    <a class="brand" href="#top" aria-label="GD Solutions, back to top"><img src="data:image/png;base64,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" alt="GD Solutions" width="250" height="60"></a>
+    <button class="burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
+    <nav class="nav" id="nav" aria-label="Main">
+      <a href="#method">Our method</a>
+      <a href="#services">Services</a>
+      <a href="#clients">Client results</a>
+      <a href="#contact" class="phone">0438 940 404</a>
+      <span class="btn btn--primary" role="button" aria-disabled="true" tabindex="0">Talk to us</span>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero" id="top">
+    <div class="wrap hero__grid">
+      <div>
+        <p class="kicker">Process improvement specialists</p>
+        <h1>Eliminate the bottlenecks in your business.</h1>
+        <p class="lede">GD Solutions partners with organisations across a wide range of industries to achieve productivity gains through policy, people, process and technology improvements.</p>
+        <div class="hero__cta">
+          <span class="btn btn--primary" role="button" aria-disabled="true" tabindex="0">Talk to us about your processes</span>
+          <span class="btn btn--line" role="button" aria-disabled="true" tabindex="0">Download our brochure</span>
+        </div>
+        <div class="hero__claim">
+          <strong>15–20%</strong>
+          <span>Efficiency gains our methodology has delivered for businesses and organisations across Australia.</span>
+        </div>
+      </div>
+
+      <figure class="map" aria-labelledby="mapcap" style="margin:0">
+        <svg viewBox="0 0 460 300" role="img" aria-label="Illustration of a process map: a bottleneck in the current process is bypassed by a redesigned flow">
+          <defs>
+            <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#8fa1bd"/></marker>
+            <marker id="arn" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#18488f"/></marker>
+          </defs>
+          
+          <rect x="0" y="0" width="460" height="96" fill="#f6f8fc"/>
+          <rect x="0" y="100" width="460" height="96" fill="#ffffff"/>
+          <rect x="0" y="200" width="460" height="96" fill="#f6f8fc"/>
+          <g font-family="IBM Plex Sans, sans-serif" font-size="11" fill="#4a5671">
+            <text x="10" y="18">Staff</text><text x="10" y="118">Team lead</text><text x="10" y="218">System</text>
+          </g>
+          
+          <g fill="#fff" stroke="#8fa1bd" stroke-width="1.5">
+            <rect x="30" y="34" width="78" height="36" rx="4"/>
+            <rect x="150" y="134" width="78" height="36" rx="4"/>
+            <rect x="150" y="34" width="78" height="36" rx="4"/>
+            <rect x="370" y="234" width="78" height="36" rx="4"/>
+          </g>
+          <rect x="265" y="134" width="82" height="36" rx="4" fill="#fbe7e8" stroke="#d9434c" stroke-width="2"/>
+          <g font-family="IBM Plex Sans, sans-serif" font-size="11" fill="#16213a" text-anchor="middle">
+            <text x="69" y="56">Request</text>
+            <text x="189" y="156">Review</text>
+            <text x="189" y="56">Re-enter</text>
+            <text x="306" y="150" fill="#b0313a" font-weight="600">Manual</text>
+            <text x="306" y="163" fill="#b0313a" font-weight="600">approval</text>
+            <text x="409" y="256">Complete</text>
+          </g>
+          <g stroke="#8fa1bd" stroke-width="1.5" fill="none" marker-end="url(#ar)">
+            <path d="M108 52 H130 V152 H148"/>
+            <path d="M189 134 V72"/>
+            <path d="M228 52 H246 V152 H263"/>
+            <path d="M347 152 H360 V252 H368"/>
+          </g>
+          
+          <path class="flow-new" d="M69 70 V252 H368" stroke="#18488f" stroke-width="2.5" fill="none" marker-end="url(#arn)"/>
+          <circle cx="306" cy="128" r="9" fill="#d9434c"/>
+          <text x="306" y="132" font-family="IBM Plex Sans, sans-serif" font-size="11" font-weight="600" fill="#fff" text-anchor="middle">!</text>
+        </svg>
+        <figcaption class="map__cap" id="mapcap">
+          <i><span class="dot" style="background:#d9434c"></span>Bottleneck found in the current process</i>
+          <i><span class="dot" style="background:#18488f"></span>Redesigned flow</i>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section" id="method">
+    <div class="wrap">
+      <div class="method__head">
+        <div>
+          <p class="kicker">Our method</p>
+          <h2>A unique methodology for removing what slows you down.</h2>
+        </div>
+        <p class="lede" style="margin:0">Our team learns your business, applies the methodology and partners with you to reach your process improvement goals. Flow-on effects include better quality and more satisfied, productive employees.</p>
+      </div>
+      <ol class="steps">
+        <li><h3>Map the current state</h3><p>Assess and map out current processes using quantitative and qualitative business process analysis.</p></li>
+        <li><h3>Model the future state</h3><p>Determine the processes needed to achieve organisational goals and perform against your KPIs.</p></li>
+        <li><h3>Find the bottlenecks</h3><p>Understand the issues and identify exactly where process improvement should take place.</p></li>
+        <li><h3>Design new processes</h3><p>Eliminate inefficiencies and align service provision with business requirements.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section services" id="services">
+    <div class="wrap svc">
+      <div>
+        <p class="kicker">Services</p>
+        <h2>From analysis through to implementation.</h2>
+        <p>Following analysis and agreed improvements, GD Solutions provides implementation support, from incremental changes to complete transformation.</p>
+      </div>
+      <div>
+        <ul class="svc__list">
+          <li><h3>Process analysis and improvement</h3><p>Our track record is 15–20% efficiency gains through policy, people, process and technology improvements.</p></li>
+          <li><h3>Change and transformation management</h3><p>Design, pilot and implementation phases that standardise new processes, with training, communication and key learnings captured.</p></li>
+          <li><h3>Scenario planning</h3><p>Customised workshops that bring your team together to test the robustness of your current strategies against a changing business environment.</p></li>
+          <li><h3>Accounting system design, setup and internal audits</h3><p>Accounting systems, chart of accounts and internal audits set up to suit the size and scope of your business.</p></li>
+        </ul>
+        <p class="svc__also">We also design customised online file sharing portals so the right staff have access to the right files at the right time.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="clients">
+    <div class="wrap">
+      <p class="kicker">Client results</p>
+      <h2>What our clients say.</h2>
+      <div class="proof__grid">
+        <blockquote class="quote-main">
+          <p>“The analysis and reports from this program of work have been excellent and are now being used to drive University-wide system changes in our Admissions area.”</p>
+          <footer><b>Karen Davies</b>, Program Manager, Student Experience Program, Macquarie University (2013)</footer>
+        </blockquote>
+        <div class="quotes">
+          <blockquote class="quote">
+            <p>“Mr David’s work was a major factor in the success of the business process improvement project for USQ.”</p>
+            <footer><b>B J Lillis</b>, Chief Operating Officer &amp; Registrar, University of Southern Queensland (2011)</footer>
+          </blockquote>
+          <blockquote class="quote">
+            <p>“GDSH team’s knowledge of administrative processes and attention to detail have aided in keeping our project on track during our peak administrative cycle; and through a major restructure.”</p>
+            <footer><b>Jude Forder</b>, Manager, Student Centres, University of Technology Sydney</footer>
+          </blockquote>
+          <blockquote class="quote">
+            <p>“Excellent and highly professional.”</p>
+            <footer><b>Sharon Waugh</b>, RailCorp</footer>
+          </blockquote>
+        </div>
+      </div>
+      <div class="orgs" aria-label="Organisations GD Solutions has worked with">
+        <span class="lbl">Worked with</span>
+        <span>Macquarie University</span>
+        <span>University of Technology Sydney</span>
+        <span>University of Southern Queensland</span>
+        <span>RailCorp</span>
+        <span>Resi Mortgage</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="contact" style="padding-top:0">
+    <div class="wrap">
+      <div class="cta">
+        <img src="data:image/webp;base64,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" alt="Gehan David, Principal Consultant at GD Solutions" width="300" height="258">
+        <div>
+          <h2>Talk to Gehan about your processes.</h2>
+          <p>Gehan David is Principal Consultant at GD Solutions. Get in touch for case studies and examples of our work.</p>
+          <div class="cta__row">
+            <span class="btn btn--primary" role="button" aria-disabled="true" tabindex="0">Call 0438 940 404</span>
+            <span class="btn btn--line" role="button" aria-disabled="true" tabindex="0">Send us a message</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="ftr">
+  <div class="wrap">
+    <div class="ftr__cols">
+      <div>
+        <h3>GD Solutions</h3>
+        <p>Specialist provider of process improvement solutions.</p>
+      </div>
+      <div>
+        <h3>Services</h3>
+        <ul>
+          <li><a href="#services">Process analysis and improvement</a></li>
+          <li><a href="#services">Change and transformation management</a></li>
+          <li><a href="#services">Scenario planning</a></li>
+          <li><a href="#services">Accounting system design</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <ul><li>Phone: 0438 940 404</li></ul>
+      </div>
+    </div>
+    <div class="disclosure">
+      Homepage concept prepared by Wolf IQ for GD Solutions. Illustrative preview only, not a live website. Not affiliated with or endorsed by GD Solutions.
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var b=document.getElementById('burger'),n=document.getElementById('nav');
+  b.addEventListener('click',function(){var o=n.getAttribute('data-open')==='true';n.setAttribute('data-open',String(!o));b.setAttribute('aria-expanded',String(!o));});
+  n.addEventListener('click',function(e){if(e.target.tagName==='A'){n.setAttribute('data-open','false');b.setAttribute('aria-expanded','false');}});
+})();
+</script>
+</body>
+</html>

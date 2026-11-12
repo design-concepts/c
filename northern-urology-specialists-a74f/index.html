@@ -49,23 +49,71 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:3px solid 
 .topbar{background:var(--navy-deep);color:#cfe3f3;font-size:.86rem}
 .topbar .wrap{display:flex;justify-content:space-between;gap:16px;padding-top:8px;padding-bottom:8px;flex-wrap:wrap}
 .topbar strong{color:#fff;font-weight:600}
-.hdr{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.hdr{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.97);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
 .hdr__in{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:82px}
 .brand img{height:46px;width:auto}
-.nav{display:flex;align-items:center;gap:30px}
-.nav a{text-decoration:none;color:var(--ink);font-weight:500;font-size:.96rem}
-.nav a:hover{color:var(--navy)}
+.nav{display:flex;align-items:center;gap:4px}
+.nav__link,.nav__trigger{display:inline-flex;align-items:center;gap:6px;padding:10px 14px;border:0;background:none;border-radius:8px;font:500 .96rem/1.2 var(--font);color:var(--ink);text-decoration:none;cursor:pointer}
+.nav__link:hover,.nav__trigger:hover,.nav__trigger[aria-expanded="true"]{color:var(--navy);background:var(--sky-soft)}
+.nav__trigger svg{transition:transform .2s}
+.nav__trigger[aria-expanded="true"] svg{transform:rotate(180deg)}
+.nav > .btn{margin-left:12px}
 .burger{display:none;background:none;border:1px solid var(--line);border-radius:10px;padding:10px 12px;cursor:pointer}
 .burger span{display:block;width:20px;height:2px;background:var(--ink);margin:4px 0}
+
+/* Menu panels */
+.panel{position:absolute;left:0;right:0;top:100%;background:#fff;border-top:1px solid var(--line);box-shadow:0 40px 60px -40px rgba(8,52,95,.45);display:none}
+.panel[data-open="true"]{display:block}
+.mega{display:grid;grid-template-columns:250px 1fr;gap:44px;padding:32px 24px 36px}
+.finder label{display:block;font-weight:600;font-size:.92rem;margin-bottom:8px}
+.finder input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;font:inherit;font-size:.95rem;background:var(--surface-alt)}
+.finder input:focus{outline:3px solid var(--sky);outline-offset:1px;background:#fff}
+.finder p{font-size:.85rem;margin:10px 0 0}
+.help{margin-top:22px;background:var(--navy);color:#fff;border-radius:14px;padding:20px}
+.help b{display:block;font-family:var(--font-display);font-weight:500;font-size:1.2rem;margin-bottom:4px}
+.help p{color:#cfe3f3;font-size:.88rem;margin:0 0 12px}
+.help span{font-weight:600}
+.mega__cols{display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
+.area summary{list-style:none;display:flex;align-items:center;gap:10px;font-family:var(--font-display);font-size:1.2rem;line-height:1.15;color:var(--ink);margin-bottom:10px}
+.area summary::-webkit-details-marker{display:none}
+.area summary i{width:34px;height:34px;border-radius:9px;background:var(--sky-soft);display:grid;place-items:center;flex:none}
+.area h4{font-size:.8rem;font-weight:600;color:var(--ink-soft);margin:14px 0 4px;letter-spacing:.01em}
+.area ul{list-style:none;margin:0;padding:0}
+.area a{display:block;padding:6px 0;color:var(--ink);text-decoration:none;font-size:.93rem;line-height:1.35}
+.area a small{display:block;color:var(--ink-soft);font-size:.78rem;margin-top:1px}
+.area a:hover{color:var(--navy)}
+.area .cond-link{font-weight:600;color:var(--navy)}
+.area .cond-link small{font-weight:400}
+.nomatch{display:none;grid-column:1/-1;color:var(--ink-soft)}
+.guides{display:grid;grid-template-columns:repeat(3,1fr);gap:36px;padding:32px 24px 36px}
+.guides h3{font-size:1.25rem}
+.guides ul{list-style:none;margin:0;padding:0}
+.guides a{display:block;padding:7px 0;color:var(--ink);text-decoration:none;font-size:.94rem;border-top:1px solid var(--line)}
+.guides a:hover{color:var(--navy)}
+.guides p{font-size:.88rem}
+[hidden]{display:none!important}
+
+@media(max-width:1100px){.mega{grid-template-columns:1fr}.finder{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start}.help{margin-top:0}}
 @media(max-width:900px){
   .burger{display:block}
-  .nav{position:fixed;inset:82px 0 auto 0;flex-direction:column;align-items:stretch;gap:0;background:#fff;border-bottom:1px solid var(--line);padding:8px 24px 24px;display:none}
-  .nav[data-open="true"]{display:flex}
-  .nav a{padding:14px 0;border-bottom:1px solid var(--line)}
-  .nav .btn{margin-top:16px;justify-content:center}
   .brand img{height:38px}
+  .nav{position:absolute;left:0;right:0;top:100%;max-height:calc(100vh - 82px);overflow:auto;flex-direction:column;align-items:stretch;gap:0;background:#fff;border-top:1px solid var(--line);padding:4px 20px 28px;display:none;box-shadow:0 30px 40px -30px rgba(8,52,95,.4)}
+  .nav[data-open="true"]{display:flex}
+  .nav__link,.nav__trigger{justify-content:space-between;width:100%;padding:16px 4px;border-radius:0;border-bottom:1px solid var(--line);font-size:1.02rem}
+  .nav > .btn{margin:18px 0 0;justify-content:center}
+  .panel{position:static;box-shadow:none;border:0}
+  .mega{padding:16px 0 8px;gap:18px}
+  .finder{display:block}
+  .help{display:none}
+  .mega__cols{grid-template-columns:1fr;gap:0}
+  .area{border-bottom:1px solid var(--line)}
+  .area summary{font-size:1.15rem;padding:12px 0;margin:0;cursor:pointer}
+  .area summary::after{content:"+";margin-left:auto;font-family:var(--font);color:var(--navy);font-size:1.3rem}
+  .area[open] summary::after{content:"\2212"}
+  .area[open]{padding-bottom:12px}
+  .guides{grid-template-columns:1fr;gap:18px;padding:16px 0 8px}
 }
-
+@media(min-width:901px){.area summary{pointer-events:none}}
 /* Hero */
 .hero{padding:clamp(48px,7vw,96px) 0 clamp(56px,8vw,104px);background:linear-gradient(180deg,#fff 0%,var(--surface-alt) 100%)}
 .hero__grid{display:grid;grid-template-columns:1.05fr 1fr;gap:56px;align-items:center}
@@ -151,17 +199,129 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:3px solid 
   </div>
 </div>
 
-<header class="hdr">
+<header class="hdr" id="hdr">
   <div class="wrap hdr__in">
     <a class="brand" href="#top" aria-label="Northern Urology Specialists, back to top"><img src="data:image/png;base64,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" alt="Northern Urology Specialists" width="445" height="92"></a>
     <button class="burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="nav">
       <span></span><span></span><span></span>
     </button>
     <nav class="nav" id="nav" aria-label="Main">
-      <a href="#conditions">Conditions</a>
-      <a href="#dr-rasiah">Dr Rasiah</a>
-      <a href="#locations">Locations</a>
-      <a href="#locations">For referrers</a>
+      <button class="nav__trigger" aria-expanded="false" aria-controls="p-treat">Conditions and treatments <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></button>
+      <div class="panel" id="p-treat">
+        <div class="wrap mega">
+          <div class="finder">
+            <div>
+              <label for="q">Find a condition or procedure</label>
+              <input id="q" type="search" placeholder="Try stones or vasectomy" autocomplete="off">
+              <p>Grouped by the part of the body affected, with each procedure listed under the condition it treats.</p>
+            </div>
+            <div class="help">
+              <b>Not sure where to start?</b>
+              <p>Our reception team can point you to the right appointment.</p>
+              <span>02 9439 8867</span>
+            </div>
+          </div>
+          <div class="mega__cols" id="cols">
+            <details class="area" open>
+              <summary><i aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0c4d90" stroke-width="2"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/></svg></i>Prostate</summary>
+              <h4>Conditions</h4>
+              <ul>
+                <li><a class="cond-link" href="#conditions">Prostate cancer</a></li>
+                <li><a class="cond-link" href="#conditions" data-k="bph enlarged lower urinary tract symptoms luts">Benign prostate conditions<small>BPH and lower urinary tract symptoms</small></a></li>
+              </ul>
+              <h4>Tests and treatments</h4>
+              <ul>
+                <li><a href="#conditions" data-k="biopsy">Transperineal prostate biopsy<small>Grid directed biopsy</small></a></li>
+                <li><a href="#conditions" data-k="biopsy trus">Trans-rectal ultrasound and biopsy<small>TRUS biopsy</small></a></li>
+                <li><a href="#conditions" data-k="robotic prostatectomy cancer">Robotic prostate removal<small>Robot assisted radical prostatectomy</small></a></li>
+                <li><a href="#conditions" data-k="radical retropubic prostatectomy lymph node cancer">Open prostate removal<small>Radical retropubic prostatectomy with pelvic lymph node dissection</small></a></li>
+                <li><a href="#conditions" data-k="turp bph benign">TURP for benign enlargement<small>Transurethral resection of the prostate</small></a></li>
+              </ul>
+            </details>
+            <details class="area" open>
+              <summary><i aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0c4d90" stroke-width="2"><path d="M8 4c-3 0-5 3-5 8s2 8 5 8 4-3 4-8-1-8-4-8z"/><path d="M16 4c3 0 5 3 5 8s-2 8-5 8-4-3-4-8 1-8 4-8z"/></svg></i>Kidney and ureter</summary>
+              <h4>Conditions</h4>
+              <ul>
+                <li><a class="cond-link" href="#conditions">Kidney cancer</a></li>
+                <li><a class="cond-link" href="#conditions" data-k="stones calculi">Kidney stones</a></li>
+              </ul>
+              <h4>Tests and treatments</h4>
+              <ul>
+                <li><a href="#conditions" data-k="nephrectomy cancer laparoscopic">Kidney removal (keyhole)<small>Laparoscopic radical nephrectomy</small></a></li>
+                <li><a href="#conditions" data-k="nephrectomy cancer">Partial kidney removal<small>Partial nephrectomy</small></a></li>
+                <li><a href="#conditions" data-k="nephroureterectomy cancer ureter">Kidney and ureter removal<small>Nephroureterectomy</small></a></li>
+                <li><a href="#conditions" data-k="stones ureteroscopy">Ureteroscopic stone removal</a></li>
+                <li><a href="#conditions" data-k="stones pcnl">Percutaneous nephrolithotomy<small>PCNL</small></a></li>
+                <li><a href="#conditions" data-k="stent stones">Ureteric stents</a></li>
+              </ul>
+            </details>
+            <details class="area" open>
+              <summary><i aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0c4d90" stroke-width="2"><path d="M6 6h12v6a6 6 0 0 1-12 0z"/><path d="M12 18v3"/></svg></i>Bladder</summary>
+              <h4>Conditions</h4>
+              <ul>
+                <li><a class="cond-link" href="#conditions">Bladder cancer</a></li>
+              </ul>
+              <h4>Tests and treatments</h4>
+              <ul>
+                <li><a href="#conditions" data-k="camera scope">Cystoscopy<small>Camera check of the bladder</small></a></li>
+                <li><a href="#conditions" data-k="turbt tumour resection cancer">Cystoscopy and bladder tumour resection</a></li>
+                <li><a href="#conditions" data-k="radical cystectomy ileal conduit cancer men male">Bladder removal and ileal conduit (men)<small>Radical cystectomy</small></a></li>
+                <li><a href="#conditions" data-k="radical cystectomy ileal conduit cancer women female">Bladder removal and ileal conduit (women)<small>Radical cystectomy</small></a></li>
+              </ul>
+            </details>
+            <details class="area" open>
+              <summary><i aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0c4d90" stroke-width="2"><circle cx="9" cy="14" r="4"/><circle cx="15" cy="14" r="4"/></svg></i>Testes and men's health</summary>
+              <h4>Conditions</h4>
+              <ul>
+                <li><a class="cond-link" href="#conditions">Testicular cancer</a></li>
+              </ul>
+              <h4>Tests and treatments</h4>
+              <ul>
+                <li><a href="#conditions" data-k="orchidectomy testicle cancer">Testicle removal<small>Radical orchidectomy</small></a></li>
+                <li><a href="#conditions" data-k="rplnd lymph node testicular cancer">Retroperitoneal lymph node dissection<small>RPLND</small></a></li>
+                <li><a href="#conditions" data-k="sterilisation contraception">Vasectomy<small>Male sterilisation</small></a></li>
+                <li><a href="#conditions">Circumcision</a></li>
+                <li><a href="#conditions" data-k="scrotal swelling">Hydrocele repair</a></li>
+                <li><a href="#conditions" data-k="foreskin">Frenuloplasty</a></li>
+              </ul>
+            </details>
+            <p class="nomatch" id="nomatch">No match. Call 02 9439 8867 and our team will help.</p>
+          </div>
+        </div>
+      </div>
+
+      <button class="nav__trigger" aria-expanded="false" aria-controls="p-guides">Patient guides <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></button>
+      <div class="panel" id="p-guides">
+        <div class="wrap guides">
+          <div>
+            <h3>Prostate cancer</h3>
+            <ul>
+              <li><a href="#conditions">Prostate cancer screening</a></li>
+              <li><a href="#conditions">Active surveillance</a></li>
+              <li><a href="#conditions">Treatment options</a></li>
+              <li><a href="#conditions">Effects of androgen deprivation</a></li>
+              <li><a href="#conditions">Diet and prostate health</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3>Kidney stones</h3>
+            <ul>
+              <li><a href="#conditions">Decreasing the risk of oxalate stones</a></li>
+              <li><a href="#conditions">Decreasing the risk of uric acid stones</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3>Before and after surgery</h3>
+            <ul>
+              <li><a href="#conditions">Bowel preparation for surgery</a></li>
+              <li><a href="#conditions">After removal of your catheter</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <a class="nav__link" href="#dr-rasiah">Dr Rasiah</a>
+      <a class="nav__link" href="#locations">Locations</a>
       <span class="btn btn--primary" role="button" aria-disabled="true">Book an appointment</span>
     </nav>
   </div>
@@ -305,14 +465,56 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:3px solid 
 
 <script>
 (function(){
-  var b=document.getElementById('burger'), n=document.getElementById('nav');
+  var hdr=document.getElementById('hdr'), b=document.getElementById('burger'), n=document.getElementById('nav');
+  var triggers=[].slice.call(n.querySelectorAll('.nav__trigger'));
+  var mq=window.matchMedia('(max-width:900px)');
+  function setPanel(t,open){
+    t.setAttribute('aria-expanded',String(open));
+    document.getElementById(t.getAttribute('aria-controls')).setAttribute('data-open',String(open));
+  }
+  function closeAll(except){triggers.forEach(function(t){if(t!==except)setPanel(t,false);});}
+  triggers.forEach(function(t){
+    t.addEventListener('click',function(){
+      var open=t.getAttribute('aria-expanded')!=='true';
+      closeAll(t); setPanel(t,open);
+      if(open && t.getAttribute('aria-controls')==='p-treat' && !mq.matches){document.getElementById('q').focus();}
+    });
+  });
   b.addEventListener('click',function(){
     var open=n.getAttribute('data-open')==='true';
-    n.setAttribute('data-open',String(!open));
-    b.setAttribute('aria-expanded',String(!open));
+    n.setAttribute('data-open',String(!open)); b.setAttribute('aria-expanded',String(!open));
+    if(open) closeAll();
+  });
+  document.addEventListener('click',function(e){ if(!hdr.contains(e.target)){closeAll();} });
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape'){var o=triggers.filter(function(t){return t.getAttribute('aria-expanded')==='true';})[0]; closeAll(); if(o)o.focus();}
   });
   n.addEventListener('click',function(e){
-    if(e.target.tagName==='A'){n.setAttribute('data-open','false');b.setAttribute('aria-expanded','false');}
+    var a=e.target.closest('a');
+    if(a){closeAll(); n.setAttribute('data-open','false'); b.setAttribute('aria-expanded','false');}
+  });
+  // Body-area groups: open on desktop, collapsible accordion on mobile
+  var areas=[].slice.call(document.querySelectorAll('.area'));
+  function syncAreas(){areas.forEach(function(d){ if(mq.matches) d.removeAttribute('open'); else d.setAttribute('open',''); });}
+  syncAreas(); mq.addEventListener('change',syncAreas);
+  // Finder
+  var q=document.getElementById('q'), nomatch=document.getElementById('nomatch');
+  q.addEventListener('input',function(){
+    var v=q.value.trim().toLowerCase(), any=false;
+    areas.forEach(function(d){
+      var shown=0;
+      d.querySelectorAll('li').forEach(function(li){
+        var a=li.querySelector('a'), hay=(a.textContent+' '+(a.getAttribute('data-k')||'')+' '+d.querySelector('summary').textContent).toLowerCase();
+        var hit=!v||hay.indexOf(v)>-1; li.hidden=!hit; if(hit)shown++;
+      });
+      d.querySelectorAll('ul').forEach(function(ul){
+        var vis=[].some.call(ul.children,function(li){return !li.hidden;});
+        ul.hidden=!vis; if(ul.previousElementSibling&&ul.previousElementSibling.tagName==='H4')ul.previousElementSibling.hidden=!vis;
+      });
+      d.hidden=!shown; if(shown)any=true;
+      if(v&&shown) d.setAttribute('open',''); else if(!v) syncAreas();
+    });
+    nomatch.style.display=any?'none':'block';
   });
 })();
 </script>

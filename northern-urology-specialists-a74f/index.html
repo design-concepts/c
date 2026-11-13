@@ -64,27 +64,20 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:3px solid 
 /* Menu panels */
 .panel{position:absolute;left:0;right:0;top:100%;background:#fff;border-top:1px solid var(--line);box-shadow:0 40px 60px -40px rgba(8,52,95,.45);display:none}
 .panel[data-open="true"]{display:block}
-.mega{display:grid;grid-template-columns:250px 1fr;gap:44px;padding:32px 24px 36px}
-.finder label{display:block;font-weight:600;font-size:.92rem;margin-bottom:8px}
-.finder input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;font:inherit;font-size:.95rem;background:var(--surface-alt)}
-.finder input:focus{outline:3px solid var(--sky);outline-offset:1px;background:#fff}
-.finder p{font-size:.85rem;margin:10px 0 0}
-.help{margin-top:22px;background:var(--navy);color:#fff;border-radius:14px;padding:20px}
-.help b{display:block;font-family:var(--font-display);font-weight:500;font-size:1.2rem;margin-bottom:4px}
-.help p{color:#cfe3f3;font-size:.88rem;margin:0 0 12px}
-.help span{font-weight:600}
-.mega__cols{display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
-.area summary{list-style:none;display:flex;align-items:center;gap:10px;font-family:var(--font-display);font-size:1.2rem;line-height:1.15;color:var(--ink);margin-bottom:10px}
-.area summary::-webkit-details-marker{display:none}
-.area summary i{width:34px;height:34px;border-radius:9px;background:var(--sky-soft);display:grid;place-items:center;flex:none}
-.area h4{font-size:.8rem;font-weight:600;color:var(--ink-soft);margin:14px 0 4px;letter-spacing:.01em}
+.simple{padding:28px 24px 0}
+.simple__cols{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;padding-bottom:26px}
+.area h3{display:flex;align-items:center;gap:10px;font-size:1.2rem;margin:0 0 10px}
+.area h3 i{width:30px;height:30px;border-radius:8px;background:var(--sky-soft);display:grid;place-items:center;flex:none}
 .area ul{list-style:none;margin:0;padding:0}
-.area a{display:block;padding:6px 0;color:var(--ink);text-decoration:none;font-size:.93rem;line-height:1.35}
-.area a small{display:block;color:var(--ink-soft);font-size:.78rem;margin-top:1px}
+.area a{display:block;padding:6px 0;color:var(--ink);text-decoration:none;font-size:.96rem}
 .area a:hover{color:var(--navy)}
-.area .cond-link{font-weight:600;color:var(--navy)}
-.area .cond-link small{font-weight:400}
-.nomatch{display:none;grid-column:1/-1;color:var(--ink-soft)}
+.simple__foot{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;border-top:1px solid var(--line);padding:16px 0 20px}
+.popular{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.popular span{font-size:.85rem;color:var(--ink-soft);margin-right:6px}
+.popular a{font-size:.86rem;color:var(--navy-deep);background:var(--sky-soft);padding:6px 12px;border-radius:999px;text-decoration:none}
+.popular a:hover{background:#d3edf9}
+.all{font-weight:600;color:var(--navy);font-size:.92rem;text-decoration:none}
+.all:hover{text-decoration:underline}
 .guides{display:grid;grid-template-columns:repeat(3,1fr);gap:36px;padding:32px 24px 36px}
 .guides h3{font-size:1.25rem}
 .guides ul{list-style:none;margin:0;padding:0}
@@ -93,7 +86,6 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:3px solid 
 .guides p{font-size:.88rem}
 [hidden]{display:none!important}
 
-@media(max-width:1100px){.mega{grid-template-columns:1fr}.finder{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start}.help{margin-top:0}}
 @media(max-width:900px){
   .burger{display:block}
   .brand img{height:38px}
@@ -102,18 +94,13 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:3px solid 
   .nav__link,.nav__trigger{justify-content:space-between;width:100%;padding:16px 4px;border-radius:0;border-bottom:1px solid var(--line);font-size:1.02rem}
   .nav > .btn{margin:18px 0 0;justify-content:center}
   .panel{position:static;box-shadow:none;border:0}
-  .mega{padding:16px 0 8px;gap:18px}
-  .finder{display:block}
-  .help{display:none}
-  .mega__cols{grid-template-columns:1fr;gap:0}
-  .area{border-bottom:1px solid var(--line)}
-  .area summary{font-size:1.15rem;padding:12px 0;margin:0;cursor:pointer}
-  .area summary::after{content:"+";margin-left:auto;font-family:var(--font);color:var(--navy);font-size:1.3rem}
-  .area[open] summary::after{content:"\2212"}
-  .area[open]{padding-bottom:12px}
+  .simple{padding:14px 0 6px}
+  .simple__cols{grid-template-columns:1fr 1fr;gap:18px 16px;padding-bottom:16px}
+  .area h3{font-size:1.05rem}
+  .area a{font-size:.94rem}
+  .simple__foot{flex-direction:column;align-items:flex-start}
   .guides{grid-template-columns:1fr;gap:18px;padding:16px 0 8px}
 }
-@media(min-width:901px){.area summary{pointer-events:none}}
 /* Hero */
 .hero{padding:clamp(48px,7vw,96px) 0 clamp(56px,8vw,104px);background:linear-gradient(180deg,#fff 0%,var(--surface-alt) 100%)}
 .hero__grid{display:grid;grid-template-columns:1.05fr 1fr;gap:56px;align-items:center}
@@ -208,84 +195,22 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:3px solid 
     <nav class="nav" id="nav" aria-label="Main">
       <button class="nav__trigger" aria-expanded="false" aria-controls="p-treat">Conditions and treatments <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></button>
       <div class="panel" id="p-treat">
-        <div class="wrap mega">
-          <div class="finder">
-            <div>
-              <label for="q">Find a condition or procedure</label>
-              <input id="q" type="search" placeholder="Try stones or vasectomy" autocomplete="off">
-              <p>Grouped by the part of the body affected, with each procedure listed under the condition it treats.</p>
-            </div>
-            <div class="help">
-              <b>Not sure where to start?</b>
-              <p>Our reception team can point you to the right appointment.</p>
-              <span>02 9439 8867</span>
-            </div>
+        <div class="wrap simple">
+          <div class="simple__cols">
+            <div class="area"><h3><i aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0c4d90" stroke-width="2"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/></svg></i>Prostate</h3>
+              <ul><li><a href="#conditions">Prostate cancer</a></li><li><a href="#conditions">Enlarged prostate (BPH)</a></li></ul></div>
+            <div class="area"><h3><i aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0c4d90" stroke-width="2"><path d="M8 4c-3 0-5 3-5 8s2 8 5 8 4-3 4-8-1-8-4-8z"/><path d="M16 4c3 0 5 3 5 8s-2 8-5 8-4-3-4-8 1-8 4-8z"/></svg></i>Kidneys</h3>
+              <ul><li><a href="#conditions">Kidney cancer</a></li><li><a href="#conditions">Kidney stones</a></li></ul></div>
+            <div class="area"><h3><i aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0c4d90" stroke-width="2"><path d="M6 6h12v6a6 6 0 0 1-12 0z"/><path d="M12 18v3"/></svg></i>Bladder</h3>
+              <ul><li><a href="#conditions">Bladder cancer</a></li></ul></div>
+            <div class="area"><h3><i aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0c4d90" stroke-width="2"><circle cx="9" cy="14" r="4"/><circle cx="15" cy="14" r="4"/></svg></i>Men's health</h3>
+              <ul><li><a href="#conditions">Testicular cancer</a></li><li><a href="#conditions">Vasectomy</a></li></ul></div>
           </div>
-          <div class="mega__cols" id="cols">
-            <details class="area" open>
-              <summary><i aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0c4d90" stroke-width="2"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/></svg></i>Prostate</summary>
-              <h4>Conditions</h4>
-              <ul>
-                <li><a class="cond-link" href="#conditions">Prostate cancer</a></li>
-                <li><a class="cond-link" href="#conditions" data-k="bph enlarged lower urinary tract symptoms luts">Benign prostate conditions<small>BPH and lower urinary tract symptoms</small></a></li>
-              </ul>
-              <h4>Tests and treatments</h4>
-              <ul>
-                <li><a href="#conditions" data-k="biopsy">Transperineal prostate biopsy<small>Grid directed biopsy</small></a></li>
-                <li><a href="#conditions" data-k="biopsy trus">Trans-rectal ultrasound and biopsy<small>TRUS biopsy</small></a></li>
-                <li><a href="#conditions" data-k="robotic prostatectomy cancer">Robotic prostate removal<small>Robot assisted radical prostatectomy</small></a></li>
-                <li><a href="#conditions" data-k="radical retropubic prostatectomy lymph node cancer">Open prostate removal<small>Radical retropubic prostatectomy with pelvic lymph node dissection</small></a></li>
-                <li><a href="#conditions" data-k="turp bph benign">TURP for benign enlargement<small>Transurethral resection of the prostate</small></a></li>
-              </ul>
-            </details>
-            <details class="area" open>
-              <summary><i aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0c4d90" stroke-width="2"><path d="M8 4c-3 0-5 3-5 8s2 8 5 8 4-3 4-8-1-8-4-8z"/><path d="M16 4c3 0 5 3 5 8s-2 8-5 8-4-3-4-8 1-8 4-8z"/></svg></i>Kidney and ureter</summary>
-              <h4>Conditions</h4>
-              <ul>
-                <li><a class="cond-link" href="#conditions">Kidney cancer</a></li>
-                <li><a class="cond-link" href="#conditions" data-k="stones calculi">Kidney stones</a></li>
-              </ul>
-              <h4>Tests and treatments</h4>
-              <ul>
-                <li><a href="#conditions" data-k="nephrectomy cancer laparoscopic">Kidney removal (keyhole)<small>Laparoscopic radical nephrectomy</small></a></li>
-                <li><a href="#conditions" data-k="nephrectomy cancer">Partial kidney removal<small>Partial nephrectomy</small></a></li>
-                <li><a href="#conditions" data-k="nephroureterectomy cancer ureter">Kidney and ureter removal<small>Nephroureterectomy</small></a></li>
-                <li><a href="#conditions" data-k="stones ureteroscopy">Ureteroscopic stone removal</a></li>
-                <li><a href="#conditions" data-k="stones pcnl">Percutaneous nephrolithotomy<small>PCNL</small></a></li>
-                <li><a href="#conditions" data-k="stent stones">Ureteric stents</a></li>
-              </ul>
-            </details>
-            <details class="area" open>
-              <summary><i aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0c4d90" stroke-width="2"><path d="M6 6h12v6a6 6 0 0 1-12 0z"/><path d="M12 18v3"/></svg></i>Bladder</summary>
-              <h4>Conditions</h4>
-              <ul>
-                <li><a class="cond-link" href="#conditions">Bladder cancer</a></li>
-              </ul>
-              <h4>Tests and treatments</h4>
-              <ul>
-                <li><a href="#conditions" data-k="camera scope">Cystoscopy<small>Camera check of the bladder</small></a></li>
-                <li><a href="#conditions" data-k="turbt tumour resection cancer">Cystoscopy and bladder tumour resection</a></li>
-                <li><a href="#conditions" data-k="radical cystectomy ileal conduit cancer men male">Bladder removal and ileal conduit (men)<small>Radical cystectomy</small></a></li>
-                <li><a href="#conditions" data-k="radical cystectomy ileal conduit cancer women female">Bladder removal and ileal conduit (women)<small>Radical cystectomy</small></a></li>
-              </ul>
-            </details>
-            <details class="area" open>
-              <summary><i aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0c4d90" stroke-width="2"><circle cx="9" cy="14" r="4"/><circle cx="15" cy="14" r="4"/></svg></i>Testes and men's health</summary>
-              <h4>Conditions</h4>
-              <ul>
-                <li><a class="cond-link" href="#conditions">Testicular cancer</a></li>
-              </ul>
-              <h4>Tests and treatments</h4>
-              <ul>
-                <li><a href="#conditions" data-k="orchidectomy testicle cancer">Testicle removal<small>Radical orchidectomy</small></a></li>
-                <li><a href="#conditions" data-k="rplnd lymph node testicular cancer">Retroperitoneal lymph node dissection<small>RPLND</small></a></li>
-                <li><a href="#conditions" data-k="sterilisation contraception">Vasectomy<small>Male sterilisation</small></a></li>
-                <li><a href="#conditions">Circumcision</a></li>
-                <li><a href="#conditions" data-k="scrotal swelling">Hydrocele repair</a></li>
-                <li><a href="#conditions" data-k="foreskin">Frenuloplasty</a></li>
-              </ul>
-            </details>
-            <p class="nomatch" id="nomatch">No match. Call 02 9439 8867 and our team will help.</p>
+          <div class="simple__foot">
+            <div class="popular"><span>Common procedures</span>
+              <a href="#conditions">Prostate biopsy</a><a href="#conditions">Robotic prostatectomy</a><a href="#conditions">Kidney stone removal</a><a href="#conditions">Cystoscopy</a>
+            </div>
+            <a class="all" href="#conditions">See all conditions and procedures</a>
           </div>
         </div>
       </div>
@@ -477,7 +402,6 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:3px solid 
     t.addEventListener('click',function(){
       var open=t.getAttribute('aria-expanded')!=='true';
       closeAll(t); setPanel(t,open);
-      if(open && t.getAttribute('aria-controls')==='p-treat' && !mq.matches){document.getElementById('q').focus();}
     });
   });
   b.addEventListener('click',function(){
@@ -492,29 +416,6 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:3px solid 
   n.addEventListener('click',function(e){
     var a=e.target.closest('a');
     if(a){closeAll(); n.setAttribute('data-open','false'); b.setAttribute('aria-expanded','false');}
-  });
-  // Body-area groups: open on desktop, collapsible accordion on mobile
-  var areas=[].slice.call(document.querySelectorAll('.area'));
-  function syncAreas(){areas.forEach(function(d){ if(mq.matches) d.removeAttribute('open'); else d.setAttribute('open',''); });}
-  syncAreas(); mq.addEventListener('change',syncAreas);
-  // Finder
-  var q=document.getElementById('q'), nomatch=document.getElementById('nomatch');
-  q.addEventListener('input',function(){
-    var v=q.value.trim().toLowerCase(), any=false;
-    areas.forEach(function(d){
-      var shown=0;
-      d.querySelectorAll('li').forEach(function(li){
-        var a=li.querySelector('a'), hay=(a.textContent+' '+(a.getAttribute('data-k')||'')+' '+d.querySelector('summary').textContent).toLowerCase();
-        var hit=!v||hay.indexOf(v)>-1; li.hidden=!hit; if(hit)shown++;
-      });
-      d.querySelectorAll('ul').forEach(function(ul){
-        var vis=[].some.call(ul.children,function(li){return !li.hidden;});
-        ul.hidden=!vis; if(ul.previousElementSibling&&ul.previousElementSibling.tagName==='H4')ul.previousElementSibling.hidden=!vis;
-      });
-      d.hidden=!shown; if(shown)any=true;
-      if(v&&shown) d.setAttribute('open',''); else if(!v) syncAreas();
-    });
-    nomatch.style.display=any?'none':'block';
   });
 })();
 </script>

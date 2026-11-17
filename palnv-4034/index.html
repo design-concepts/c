@@ -160,6 +160,7 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:3px solid 
 /* Views */
 .view[hidden]{display:none}
 a.btn{text-decoration:none;cursor:pointer}
+a.btn:hover{filter:brightness(1.08)}
 .pagehead{padding:clamp(40px,6vw,72px) 0 clamp(28px,4vw,40px);background:var(--mint)}
 .pagehead p.lede{margin-bottom:0}
 .crumb{font-weight:600;font-size:.95rem;margin:0 0 18px}
@@ -612,14 +613,23 @@ a.btn{text-decoration:none;cursor:pointer}
     x.addEventListener('keydown',function(e){var j=null;if(e.key==='ArrowRight')j=(i+1)%tabs.length;if(e.key==='ArrowLeft')j=(i-1+tabs.length)%tabs.length;if(j!==null){e.preventDefault();sel(tabs[j]);tabs[j].focus();}});});
   // ---- Views (hash routing, single file) ----
   var views={book:'view-book',adopt:'view-adopt'};
-  function route(){
-    var h=location.hash.replace('#','');var v=views[h]?h:'home';
+  function route(force){
+    var h=(typeof force==='string')?force:location.hash.replace('#','');var v=views[h]?h:'home';
     ['home','book','adopt'].forEach(function(k){document.getElementById('view-'+k).hidden=(k!==v);});
     document.querySelectorAll('.nav a').forEach(function(a){a.removeAttribute('aria-current');if(a.getAttribute('href')==='#'+v)a.setAttribute('aria-current','page');});
     if(v!=='home'){window.scrollTo(0,0);document.title=(v==='book'?'Book a café session':'Adoptable cats')+', PALNV concept';}
     else{document.title='PALNV and Rescued Treasures Cat Café, Homepage concept';var el=h&&document.getElementById(h);if(el&&h!=='top'){el.scrollIntoView();}else{window.scrollTo(0,0);}}
   }
-  window.addEventListener('hashchange',route);route();
+  window.addEventListener('hashchange',function(){route();});route();
+  // Handle in-page links directly so they work even where the viewer blocks hash changes (e.g. embedded previews).
+  document.addEventListener('click',function(e){
+    var a=e.target.closest&&e.target.closest('a[href^="#"]');if(!a)return;
+    var h=a.getAttribute('href').slice(1);if(!h)return;
+    e.preventDefault();
+    try{history.pushState(null,'','#'+h);}catch(err){}
+    route(h);
+  });
+  window.addEventListener('popstate',function(){route();});
 
   // ---- Booking ----
   var dates=document.getElementById('bkDates'),slots=document.getElementById('bkSlots'),hint=document.getElementById('bkSlotHint');

@@ -89,10 +89,10 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 
 /* Hero */
 .hero{position:relative;min-height:min(100vh,920px);display:flex;align-items:center;overflow:hidden;background:#060606}
-.hero__img{position:absolute;top:0;right:0;height:100%;width:auto;max-width:none;animation:kb 18s ease-in-out infinite alternate;transform-origin:70% 30%}
+.hero__img{position:absolute;right:0;bottom:0;width:min(60vw,880px);height:auto;max-width:none;filter:brightness(.82) saturate(.92);-webkit-mask-image:linear-gradient(180deg,transparent 0%,#000 30%,#000 100%);mask-image:linear-gradient(180deg,transparent 0%,#000 30%,#000 100%)}
 @keyframes kb{from{transform:scale(1)}to{transform:scale(1.06)}}
 .hero__fx{position:absolute;inset:0;pointer-events:none;background:
-  radial-gradient(ellipse 50% 60% at 78% 20%,rgba(245,184,46,.16),transparent 60%),
+  radial-gradient(ellipse 40% 50% at 80% 40%,rgba(245,184,46,.10),transparent 65%),
   linear-gradient(0deg,#060606 0%,rgba(6,6,6,0) 22%),
   repeating-linear-gradient(0deg,rgba(255,255,255,.018) 0 1px,transparent 1px 3px)}
 .hero__body{position:relative;z-index:2;width:100%;padding-top:110px;padding-bottom:120px}
@@ -108,7 +108,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .seen b small{font-family:var(--font);text-transform:none;font-size:.76rem;color:var(--ink-dim);margin-left:6px;letter-spacing:0;font-weight:500}
 @media(max-width:900px){
   .hero{display:block;min-height:0}
-  .hero__img{position:relative;width:100%;height:min(118vw,560px);object-fit:cover;object-position:88% 20%;animation:none}
+  .hero__img{position:relative;width:100%;height:min(118vw,560px);object-fit:cover;object-position:88% 20%;-webkit-mask-image:none;mask-image:none}
   .hero__fx{background:linear-gradient(0deg,#060606 0%,#060606 calc(100% - min(118vw,560px) + 10px),rgba(6,6,6,0) calc(100% - min(118vw,560px) + 200px))}
   .hero__body{padding:0 20px 40px;margin-top:-140px}
   .seen{position:relative;bottom:auto;padding-bottom:40px}

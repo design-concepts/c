@@ -1,0 +1,18 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "VAL TV Network Sports & Entertainment",
+  "alternateName": "VAL TV Network",
+  "url": "https://valtvnetwork.tv/",
+  "logo": "https://valtvnetwork.tv/images/val-tv-network-logo.png",
+  "description": "Independent television production and distribution platform based in Las Vegas, Nevada.",
+  "email": "valtvnetwork@gmail.com",
+  "telephone": "+1-725-203-0850",
+  "address": { "@type": "PostalAddress", "addressLocality": "Las Vegas", "addressRegion": "NV", "addressCountry": "US" },
+  "founder": { "@type": "Person", "name": "Valerie Glenzell McConnell", "jobTitle": "Founder and Independent Broadcast Distributor" },
+  "sameAs": [
+    "https://www.facebook.com/ValTelevisionNetworkValTvNetwork",
+    "https://www.instagram.com/valtvnetwork",
+    "https://www.youtube.com/@valtvnetwork7771"
+  ]
+}

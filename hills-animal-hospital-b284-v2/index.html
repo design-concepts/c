@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Hills Animal Hospital | Homepage concept</title>
+<meta name="description" content="Illustrative homepage concept. Not a live website.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 rx=%228%22 fill=%22%2300add8%22/%3E%3Cellipse cx=%2216%22 cy=%2220%22 rx=%226%22 ry=%225%22 fill=%22white%22/%3E%3Ccircle cx=%229%22 cy=%2213%22 r=%222.4%22 fill=%22white%22/%3E%3Ccircle cx=%2213.5%22 cy=%229%22 r=%222.4%22 fill=%22white%22/%3E%3Ccircle cx=%2218.5%22 cy=%229%22 r=%222.4%22 fill=%22white%22/%3E%3Ccircle cx=%2223%22 cy=%2213%22 r=%222.4%22 fill=%22%23e31b3d%22/%3E%3C/svg%3E">
+<link rel="preload" as="image" href="assets/hero-dachshund-cat.webp" imagesrcset="assets/hero-dachshund-cat-820.webp 820w, assets/hero-dachshund-cat.webp 1500w" imagesizes="(max-width: 900px) 100vw, 46vw">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@500;600&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --teal:#0a7ea4;
+  --teal-deep:#06607e;
+  --teal-mid:#0889b2;
+  --brand:#05abd6;
+  --aqua:#d7f0f8;
+  --aqua-soft:#eef8fc;
+  --cream:#ffffff;
+  --cream-deep:#f3f6f8;
+  --gold:#bd2a49;
+  --gold-soft:#ffd9e0;
+  --ink:#2f3033;
+  --ink-soft:#5f6064;
+  --line:#e2e8ec;
+  --white:#ffffff;
+  --radius:18px;
+  --wrap:1200px;
+  --font:"Lato",system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --display:"Lexend",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:88px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;font-family:var(--font);color:var(--ink);background:var(--cream);line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto;display:block}
+h1,h2,h3{font-family:var(--display);font-weight:600;line-height:1.12;margin:0 0 .5em;letter-spacing:-.025em;color:var(--ink)}
+h1{font-size:clamp(2.3rem,4.8vw,3.9rem)}
+h2{font-size:clamp(1.9rem,3.6vw,2.9rem)}
+h3{font-size:1.45rem}
+p{margin:0 0 1em;color:var(--ink-soft)}
+a{color:var(--teal)}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+.section{padding:clamp(72px,9vw,120px) 0}
+.eyebrow{font-weight:700;font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;color:var(--teal-mid);margin:0 0 1em;display:inline-flex;align-items:center;gap:10px}
+.eyebrow::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--gold)}
+.lede{font-size:1.14rem;max-width:56ch}
+.skip{position:absolute;left:-9999px}
+.skip:focus{left:16px;top:16px;z-index:300;background:var(--white);padding:12px 18px;border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,.18)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--brand);outline-offset:3px;border-radius:8px}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:14px 26px;border-radius:999px;font-weight:700;font-size:1rem;text-decoration:none;border:2px solid transparent;font-family:inherit;cursor:pointer;transition:background .2s,color .2s,transform .2s,border-color .2s}
+.btn svg{flex:0 0 auto}
+.btn--primary{background:var(--teal);color:#fff}
+.btn--primary:hover{background:var(--teal-deep);transform:translateY(-1px)}
+.btn--gold{background:#fff;color:var(--teal-deep)}
+.btn--gold:hover{background:var(--aqua);transform:translateY(-1px)}
+.btn--outline{border-color:rgba(255,255,255,.5);color:#fff;background:transparent}
+.btn--outline[aria-disabled="true"]{cursor:default}
+
+/* Header */
+.hdr{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid transparent;transition:border-color .2s,box-shadow .2s}
+.hdr.is-scrolled{border-color:var(--line);box-shadow:0 6px 24px rgba(14,75,82,.06)}
+.hdr__in{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:80px}
+.brand{display:block;flex:0 0 auto}
+.brand img{width:206px;height:auto}
+.nav{display:flex;align-items:center;gap:30px}
+.nav__link{text-decoration:none;color:var(--ink);font-weight:600;font-size:.97rem}
+.nav__link:hover{color:var(--teal-mid)}
+.nav__item{position:relative}
+.nav__trigger{background:none;border:0;padding:8px 0;font:inherit;font-weight:600;font-size:.97rem;color:var(--ink);cursor:pointer;display:flex;align-items:center;gap:8px}
+.nav__trigger::after{content:"";width:7px;height:7px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg) translateY(-2px);transition:transform .2s}
+.nav__item[data-open="true"]>.nav__trigger::after{transform:rotate(225deg) translate(-2px,0)}
+.nav__trigger:hover{color:var(--teal-mid)}
+.nav__phone{display:flex;align-items:center;gap:8px;font-weight:700;color:var(--teal);white-space:nowrap}
+.menu{position:absolute;top:calc(100% + 22px);left:50%;transform:translateX(-38%);background:var(--white);border:1px solid var(--line);border-radius:22px;box-shadow:0 28px 70px rgba(10,52,57,.16);padding:28px;display:none;grid-template-columns:repeat(3,minmax(220px,1fr));gap:28px;width:min(820px,92vw);z-index:120}
+.menu::before{content:"";position:absolute;left:0;right:0;top:-24px;height:24px}
+.nav__item[data-open="true"]>.menu{display:grid}
+@media (hover:hover) and (min-width:981px){.nav__item:not([data-suppress]):hover>.menu{display:grid}}
+.menu__seg h4{margin:0 0 10px;font-size:.74rem;text-transform:uppercase;letter-spacing:.09em;color:var(--teal-mid);display:flex;align-items:center;gap:8px}
+.menu__seg h4::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--gold)}
+.menu__seg a{display:block;padding:8px 10px;margin:0 -10px;border-radius:10px;text-decoration:none}
+.menu__seg a:hover,.menu__seg a:focus-visible{background:var(--aqua-soft)}
+.menu__seg a strong{display:block;color:var(--ink);font-weight:600;font-size:.94rem}
+.menu__seg a span{display:block;color:var(--ink-soft);font-size:.83rem;line-height:1.35}
+.burger{display:none;background:var(--white);border:1px solid var(--line);border-radius:12px;width:48px;height:48px;padding:0;cursor:pointer;align-items:center;justify-content:center;flex-direction:column;gap:5px}
+.burger span{display:block;width:20px;height:2px;background:var(--ink);border-radius:2px;transition:transform .2s,opacity .2s}
+.burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+@media(max-width:1100px){.nav__phone{display:none}}
+@media(max-width:980px){
+  .burger{display:flex}
+  .brand img{width:172px}
+  .hdr__in{min-height:72px}
+  .nav{position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:var(--white);border-bottom:1px solid var(--line);box-shadow:0 20px 40px rgba(10,52,57,.12);padding:8px 24px 24px;display:none;max-height:calc(100vh - 72px);overflow-y:auto}
+  .nav[data-open="true"]{display:flex}
+  .nav__link{padding:15px 0;border-bottom:1px solid var(--line)}
+  .nav__trigger{width:100%;justify-content:space-between;padding:15px 0;border-bottom:1px solid var(--line)}
+  .nav__phone{display:flex;padding:16px 0 4px}
+  .nav .btn{margin-top:14px}
+  .menu{position:static;transform:none;width:auto;box-shadow:none;border:0;border-radius:0;padding:12px 0 16px;grid-template-columns:1fr;gap:18px;background:transparent}
+  .menu::before{display:none}
+}
+
+/* Hero */
+.hero{position:relative;padding-top:clamp(28px,4vw,48px);background:linear-gradient(180deg,#fff 0%,var(--aqua-soft) 100%);overflow-x:clip}
+.hero__grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:24px;align-items:end}
+.hero__copy{padding-bottom:clamp(72px,8vw,112px);position:relative;z-index:2}
+.hero h1 em{font-style:normal;color:var(--brand);position:relative;white-space:nowrap}
+.hero h1 em::after{content:"";position:absolute;left:0;right:0;bottom:.04em;height:.14em;background:var(--brand);border-radius:6px;z-index:-1;opacity:.28}
+.hero__cta{display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin-top:30px}
+.hero__phone{display:inline-flex;align-items:center;gap:10px;font-weight:700;color:var(--ink);font-size:1.05rem;min-height:52px;padding:0 6px}
+.hero__phone small{display:block;font-weight:500;color:var(--ink-soft);font-size:.8rem;line-height:1.1}
+.hero__phone .ico{width:44px;height:44px;border-radius:50%;background:var(--aqua);display:grid;place-items:center;color:var(--teal)}
+.rating{display:inline-flex;align-items:center;gap:12px;margin-top:28px;background:var(--white);border:1px solid var(--line);border-radius:999px;padding:8px 18px 8px 8px;box-shadow:0 8px 24px rgba(14,75,82,.06)}
+.rating__g{width:34px;height:34px;border-radius:50%;background:#fff;border:1px solid var(--line);display:grid;place-items:center}
+.rating b{font-family:var(--display);font-size:1.3rem;line-height:1;color:var(--ink)}
+.stars{color:#f5b301;letter-spacing:2px;font-size:.95rem}
+.rating span{font-size:.88rem;color:var(--ink-soft);font-weight:600}
+.hero__visual{position:relative;align-self:end;z-index:3;margin-bottom:0;width:112%;margin-left:-4%}
+.hero__blob{position:absolute;inset:4% -4% 0 6%;z-index:0}
+.hero__blob svg{width:100%;height:100%;overflow:visible}
+.hero__dot{position:absolute;border-radius:50%;z-index:1}
+.hero__dot--gold{width:64px;height:64px;background:var(--brand);top:16%;left:2%}
+.hero__dot--ring{width:22px;height:22px;background:var(--gold);right:6%;top:10%}
+.hero__pets{position:relative;z-index:2;width:100%;filter:drop-shadow(0 26px 30px rgba(10,52,57,.18))}
+.hero__tag{position:absolute;z-index:3;left:-4%;bottom:14%;background:var(--white);border-radius:16px;padding:12px 16px;box-shadow:0 18px 40px rgba(10,52,57,.16);display:flex;align-items:center;gap:12px;font-weight:700;font-size:.92rem;color:var(--ink)}
+.hero__tag i{width:36px;height:36px;border-radius:12px;background:var(--aqua);display:grid;place-items:center;font-style:normal;color:var(--teal)}
+@media(max-width:900px){
+  .hero__grid{grid-template-columns:1fr;gap:4px}
+  .hero__copy{padding-bottom:8px}
+  .hero__visual{margin:8px auto 0;max-width:620px;justify-self:center;width:100%}
+  .hero__tag{display:none}
+}
+
+/* Visit strip */
+.visit{background:var(--teal);color:#fff;position:relative;z-index:1;padding:44px 0}
+.visit__grid{display:grid;grid-template-columns:repeat(3,1fr) auto;gap:28px;align-items:center}
+.visit__item{display:flex;gap:16px;align-items:flex-start}
+.visit__ico{flex:0 0 48px;width:48px;height:48px;border-radius:14px;background:rgba(255,255,255,.16);display:grid;place-items:center;color:#fff}
+.visit__item dt{font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;font-weight:700;color:#d7f0f8;margin-bottom:2px}
+.visit__item dd{margin:0;font-weight:600;font-size:1.02rem;color:#fff;line-height:1.4}
+.visit dl{margin:0;display:contents}
+@media(max-width:1020px){.visit__grid{grid-template-columns:1fr 1fr}.visit__grid .btn{justify-self:start}}
+@media(max-width:900px){.visit{padding:36px 0}}
+@media(max-width:600px){
+  .svc-head br{display:none}
+  .hero .eyebrow{font-size:.74rem;letter-spacing:.03em}
+  .hero h1{font-size:2.35rem}
+  .hero .lede{font-size:1rem;margin-bottom:0}
+  .hero__cta{margin-top:20px;gap:8px}
+  .hero__cta .btn{width:100%}
+  .rating{margin-top:14px}
+}
+@media(max-width:560px){.visit__grid{grid-template-columns:1fr;gap:20px}.visit__grid .btn{width:100%}}
+
+/* Services */
+.svc-head{display:flex;justify-content:space-between;align-items:end;gap:32px;flex-wrap:wrap;margin-bottom:44px}
+.svc-head .lede{margin:0}
+.bento{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:start}
+.feat{position:relative;border-radius:26px;overflow:hidden;background:var(--white);border:1px solid var(--line);display:flex;flex-direction:column;box-shadow:0 14px 40px rgba(10,126,164,.08)}
+.bento .feat:nth-child(2){margin-top:56px}
+.feat__media{overflow:hidden;aspect-ratio:4/5}
+.feat img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.feat:hover img{transform:scale(1.03)}
+.feat__panel{padding:24px 24px 26px}
+.feat__num{font-family:var(--display);font-size:.95rem;color:var(--teal-mid);font-weight:600;display:block;margin-bottom:4px}
+.feat__panel h3{margin-bottom:.35em}
+.feat__panel p{font-size:.97rem;margin-bottom:14px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:0;padding:0}
+.chips li{font-size:.82rem;font-weight:600;background:var(--aqua-soft);color:var(--teal);border-radius:999px;padding:6px 12px}
+.feat img.pos-everyday{object-position:50% 20%}
+.feat img.pos-surgery{object-position:50% 30%}
+.feat img.pos-cats{object-position:50% 20%}
+.credit-note{margin-top:18px;font-size:.84rem;color:var(--ink-soft)}
+@media(max-width:900px){
+  .bento{grid-template-columns:1fr}
+  .bento .feat:nth-child(2){margin-top:0}
+  .feat__media{aspect-ratio:4/3}
+}
+
+/* Owner */
+.owner{background:var(--aqua-soft)}
+.owner__grid{display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(40px,6vw,88px);align-items:center}
+.owner__media{position:relative}
+.owner__frame{border-radius:28px;overflow:hidden;aspect-ratio:4/5;background:var(--cream-deep);box-shadow:0 30px 60px rgba(10,52,57,.16)}
+.owner__frame--ph{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;text-align:center;background:var(--white);border:2px dashed #b9dceb;color:var(--teal);padding:32px}
+.owner__frame--ph svg{width:72px;height:72px;color:var(--brand)}
+.owner__frame--ph strong{font-family:var(--display);font-weight:600;font-size:1.15rem;color:var(--ink)}
+.owner__frame--ph span{font-size:.92rem;color:var(--ink-soft);max-width:24ch}
+.owner__gold{position:absolute;width:110px;height:110px;border-radius:50%;background:var(--brand);right:2%;top:4%;z-index:-0}
+.owner__badge{position:absolute;left:-2%;bottom:8%;background:var(--white);border-radius:18px;padding:14px 18px;box-shadow:0 18px 40px rgba(10,52,57,.16);font-weight:700;font-size:.92rem;display:flex;align-items:center;gap:12px}
+.owner__badge i{width:38px;height:38px;border-radius:12px;background:var(--aqua);display:grid;place-items:center;color:var(--teal-deep);font-style:normal}
+.owner__media figcaption{margin-top:16px;font-size:.82rem;color:var(--ink-soft);text-align:center}
+.owner blockquote{margin:28px 0;padding:24px 28px;background:var(--white);border-radius:20px;font-family:var(--display);font-size:1.25rem;line-height:1.4;color:var(--ink);position:relative}
+.owner blockquote::before{content:"\201C";position:absolute;top:-22px;left:22px;font-size:4rem;line-height:1;color:var(--gold)}
+.owner cite{display:block;margin-top:12px;font-family:var(--font);font-style:normal;font-size:.9rem;font-weight:700;color:var(--teal-mid)}
+.tags{display:flex;flex-wrap:wrap;gap:10px}
+.tag{border:1px solid #cde6ef;border-radius:999px;padding:7px 14px;font-size:.86rem;font-weight:600;color:var(--teal);background:var(--white)}
+.tag--feature{background:var(--teal);color:#fff;border-color:var(--teal)}
+@media(max-width:900px){.owner__grid{grid-template-columns:1fr}.owner__media{max-width:460px;margin:0 auto;width:100%}}
+
+/* Reviews */
+.rev-head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:44px}
+.score{display:flex;align-items:center;gap:16px;background:var(--white);border:1px solid var(--line);border-radius:20px;padding:16px 22px}
+.score b{font-family:var(--display);font-size:2.6rem;line-height:1;color:var(--ink)}
+.score span{font-size:.9rem;color:var(--ink-soft);font-weight:600}
+.quotes{display:grid;gap:24px;grid-template-columns:repeat(3,1fr)}
+.quote{background:var(--white);border:1px solid var(--line);border-radius:22px;padding:30px;margin:0;display:flex;flex-direction:column;justify-content:space-between;gap:20px}
+.quote p{color:var(--ink);font-size:1.05rem;line-height:1.6;margin:12px 0 0}
+.quote footer{display:flex;align-items:center;gap:10px;font-size:.88rem;color:var(--ink-soft);font-weight:700}
+@media(max-width:900px){.quotes{grid-template-columns:1fr}}
+
+/* Booking */
+.book{padding:0 0 clamp(72px,9vw,120px)}
+.book__card{background:var(--teal);border-radius:32px;padding:clamp(36px,6vw,72px);display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(32px,5vw,64px);align-items:center;position:relative;overflow:hidden;color:#fff}
+.book__card::before{content:"";position:absolute;right:-90px;top:-90px;width:300px;height:300px;border-radius:50%;background:var(--brand);opacity:.35}
+.book__card h2{color:#fff}
+.book__card p{color:rgba(255,255,255,.82)}
+.book__list{list-style:none;padding:0;margin:24px 0 0;display:grid;gap:12px}
+.book__list li{display:flex;gap:12px;align-items:center;font-weight:600}
+.book__list svg{color:#9fe3f5;flex:0 0 auto}
+.book__panel{position:relative;z-index:1;background:var(--white);color:var(--ink);border-radius:24px;padding:30px;display:grid;gap:16px;box-shadow:0 24px 50px rgba(0,0,0,.18)}
+.book__panel h3{margin:0;font-size:1.3rem}
+.book__phone{font-family:var(--display);font-size:clamp(1.7rem,3vw,2.2rem);font-weight:600;color:var(--teal);line-height:1}
+.book__panel small{color:var(--ink-soft);font-size:.86rem}
+.book__panel .btn{width:100%}
+@media(max-width:900px){.book__card{grid-template-columns:1fr}}
+
+/* Footer */
+.ftr{background:var(--cream-deep);padding:60px 0 0}
+.ftr__cols{display:grid;gap:32px;grid-template-columns:1.4fr 1fr 1fr 1.2fr;padding-bottom:40px}
+.ftr h3{font-family:var(--font);font-size:.78rem;text-transform:uppercase;letter-spacing:.09em;color:var(--teal-mid);font-weight:700}
+.ftr ul{list-style:none;margin:0;padding:0}
+.ftr li{margin-bottom:8px;color:var(--ink);font-size:.95rem}
+.ftr a{color:var(--ink);text-decoration:none}
+.ftr a:hover{text-decoration:underline}
+.ftr__logo{width:186px;margin-bottom:16px}
+@media(max-width:860px){.ftr__cols{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.ftr__cols{grid-template-columns:1fr}}
+.disclosure{border-top:1px solid var(--line);padding:22px 0 30px;font-size:.88rem;color:var(--ink-soft)}
+.disclosure p{margin:0 0 6px;font-size:inherit}
+
+/* Mobile booking bar */
+.mbar{position:fixed;left:12px;right:12px;bottom:12px;z-index:90;display:none;gap:10px;padding:10px;background:rgba(255,253,249,.97);border:1px solid var(--line);border-radius:999px;box-shadow:0 16px 40px rgba(10,52,57,.2);transition:transform .25s,opacity .25s}
+.mbar .btn{flex:1;min-height:48px;padding:10px 16px;font-size:.95rem}
+.mbar__call{flex:0 0 auto !important;width:48px;padding:0 !important;background:var(--aqua);color:var(--teal);border-radius:50%}
+.mbar.is-hidden{transform:translateY(140%);opacity:0;pointer-events:none}
+@media(max-width:900px){.mbar{display:flex}body{padding-bottom:84px}}
+</style>
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="hdr" id="hdr">
+  <div class="wrap hdr__in">
+    <a class="brand" href="#top" aria-label="Hills Animal Hospital, back to top"><img src="assets/logo.png" alt="Hills Animal Hospital" width="322" height="77"></a>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav" id="nav" aria-label="Main">
+      <div class="nav__item">
+        <button class="nav__trigger" id="svcTrigger" aria-expanded="false" aria-controls="svcMenu">Services</button>
+        <div class="menu" id="svcMenu">
+          <div class="menu__seg">
+            <h4>Everyday care</h4>
+            <a href="#everyday-care"><strong>Consultations</strong><span>Thorough history and physical examination</span></a>
+            <a href="#everyday-care"><strong>Vaccinations</strong><span>Annual protection for dogs, cats and rabbits</span></a>
+            <a href="#everyday-care"><strong>Desexing</strong><span>Day procedure with pain relief</span></a>
+            <a href="#everyday-care"><strong>Microchipping</strong><span>Quick, with minimal discomfort</span></a>
+            <a href="#everyday-care"><strong>Dentistry</strong><span>Advanced dental unit, scaling and polishing</span></a>
+            <a href="#everyday-care"><strong>Nutrition and weight management</strong><span>Premium and prescription diets</span></a>
+          </div>
+          <div class="menu__seg">
+            <h4>Surgery and diagnostics</h4>
+            <a href="#surgery-diagnostics"><strong>Surgery</strong><span>Modern theatre, visiting specialist surgeon</span></a>
+            <a href="#surgery-diagnostics"><strong>Digital radiography</strong><span>Fast, safe x-rays on site</span></a>
+            <a href="#surgery-diagnostics"><strong>In-house pathology</strong><span>Blood and urine results within minutes</span></a>
+            <a href="#surgery-diagnostics"><strong>Specialist ultrasonography</strong><span>Visiting specialist, heart and abdomen</span></a>
+          </div>
+          <div class="menu__seg">
+            <h4>Care and support</h4>
+            <a href="#cat-care"><strong>Cat boarding</strong><span>Separate cattery with two-level condos</span></a>
+            <a href="#cat-care"><strong>Cat rescue and adoption</strong><span>Rehoming stray cats and orphaned kittens</span></a>
+            <a href="#cat-care"><strong>Grooming</strong><span>Baths, ear cleans and nail clips</span></a>
+            <a href="#cat-care"><strong>Euthanasia</strong><span>Compassionate support and cremation options</span></a>
+          </div>
+        </div>
+      </div>
+      <a class="nav__link" href="#team">Our Team</a>
+      <a class="nav__link" href="#reviews">Reviews</a>
+      <a class="nav__link" href="#contact">Contact</a>
+      <span class="nav__phone"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>(02) 9659 1088</span>
+      <a class="btn btn--primary" href="#contact">Book an appointment</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero" id="top" aria-labelledby="hero-title">
+    <div class="wrap hero__grid">
+      <div class="hero__copy">
+        <p class="eyebrow">Family-owned vet hospital in Castle Hill</p>
+        <h1 id="hero-title">Personalised vet care for your <em>family pets</em>.</h1>
+        <p class="lede">A purpose-designed animal hospital in Castle Hill. Modern facilities, a friendly team, and a focus on putting your pet's needs first.</p>
+        <div class="hero__cta">
+          <a class="btn btn--primary" href="#contact">Book an appointment
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <span class="hero__phone"><span class="ico" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></span><span><small>Call the hospital</small>(02) 9659 1088</span></span>
+        </div>
+        <div class="rating">
+          <span class="rating__g" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 48 48"><path fill="#4285F4" d="M45.1 24.5c0-1.6-.1-3.1-.4-4.5H24v8.5h11.8c-.5 2.8-2.1 5.1-4.4 6.7v5.5h7.1c4.2-3.8 6.6-9.5 6.6-16.2z"/><path fill="#34A853" d="M24 46c5.9 0 10.9-2 14.5-5.3l-7.1-5.5c-2 1.3-4.5 2.1-7.4 2.1-5.7 0-10.6-3.9-12.3-9.1H4.4v5.7C8 41.1 15.4 46 24 46z"/><path fill="#FBBC05" d="M11.7 28.2c-.4-1.3-.7-2.7-.7-4.2s.3-2.9.7-4.2v-5.7H4.4C2.9 17.1 2 20.4 2 24s.9 6.9 2.4 9.9l7.3-5.7z"/><path fill="#EA4335" d="M24 10.7c3.2 0 6.1 1.1 8.4 3.3l6.3-6.3C34.9 4.1 29.9 2 24 2 15.4 2 8 6.9 4.4 14.1l7.3 5.7c1.7-5.2 6.6-9.1 12.3-9.1z"/></svg></span>
+          <b>4.8</b><span class="stars" aria-hidden="true">★★★★★</span><span>Rated on Google</span>
+        </div>
+      </div>
+      <div class="hero__visual">
+        <div class="hero__blob" aria-hidden="true">
+          <svg viewBox="0 0 600 520" preserveAspectRatio="none"><path fill="#cdeef8" d="M318 10c92-6 196 30 244 114 40 72 40 168 30 252-8 70-14 108-30 144H24C6 470 2 410 14 350c16-78 22-150 64-222C118 60 210 18 318 10z"/></svg>
+        </div>
+        <span class="hero__dot hero__dot--gold" aria-hidden="true"></span>
+        <span class="hero__dot hero__dot--ring" aria-hidden="true"></span>
+        <img class="hero__pets" src="assets/hero-dachshund-cat.webp" srcset="assets/hero-dachshund-cat-820.webp 820w, assets/hero-dachshund-cat.webp 1500w" sizes="(max-width: 900px) 100vw, 46vw" width="1500" height="1237" alt="A black and tan dachshund and a grey cat side by side, looking up with curious expressions" fetchpriority="high">
+      </div>
+    </div>
+  </section>
+
+  <section class="visit" aria-label="Visit us">
+    <div class="wrap">
+      <div class="visit__grid">
+        <dl>
+          <div class="visit__item">
+            <span class="visit__ico" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+            <div><dt>Address</dt><dd>Unit 1A / 5 Salisbury Rd,<br>Castle Hill NSW 2154</dd></div>
+          </div>
+          <div class="visit__item">
+            <span class="visit__ico" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></span>
+            <div><dt>Phone</dt><dd>(02) 9659 1088</dd></div>
+          </div>
+          <div class="visit__item">
+            <span class="visit__ico" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="17" rx="3"/><path d="M8 2.5v4M16 2.5v4M3 10h18"/></svg></span>
+            <div><dt>Appointments</dt><dd>Monday to Saturday</dd></div>
+          </div>
+        </dl>
+        <a class="btn btn--gold" href="#contact">Book an appointment</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="services" aria-labelledby="svc-title">
+    <div class="wrap">
+      <div class="svc-head">
+        <div>
+          <p class="eyebrow">Our services</p>
+          <h2 id="svc-title">Everything your pet needs, <br>under one roof</h2>
+        </div>
+        <p class="lede">From annual check-ups to surgery and in-house diagnostics, our hospital is equipped with the latest technology so your pet gets the care they deserve.</p>
+      </div>
+      <div class="bento">
+        <article class="feat" id="everyday-care">
+          <div class="feat__media"><img class="pos-everyday" src="assets/service-everyday-care.webp" width="1000" height="1250" loading="lazy" alt="A dachshund standing calmly on an examination table during a check-up"></div>
+          <div class="feat__panel">
+            <span class="feat__num">01</span>
+            <h3>Everyday care</h3>
+            <p>Prevention is the best medicine. Yearly checks are done at your pet's annual health check.</p>
+            <ul class="chips"><li>Consultations</li><li>Vaccinations</li><li>Desexing</li><li>Microchipping</li><li>Dentistry</li><li>Nutrition</li></ul>
+          </div>
+        </article>
+        <article class="feat" id="surgery-diagnostics">
+          <div class="feat__media"><img class="pos-surgery" src="assets/service-surgery-diagnostics.webp" width="1000" height="1250" loading="lazy" alt="A dog lying on its back while a gloved vet performs an ultrasound scan"></div>
+          <div class="feat__panel">
+            <span class="feat__num">02</span>
+            <h3>Surgery and diagnostics</h3>
+            <p>A surgical theatre, modern anaesthetic machines and on-site testing for prompt answers.</p>
+            <ul class="chips"><li>Surgery</li><li>Digital radiography</li><li>In-house pathology</li><li>Ultrasonography</li></ul>
+          </div>
+        </article>
+        <article class="feat feat--cats" id="cat-care">
+          <div class="feat__media"><img class="pos-cats" src="assets/service-cat-care.webp" width="1000" height="1250" loading="lazy" alt="A fluffy white cat held gently in gloved hands on a clinic table"></div>
+          <div class="feat__panel">
+            <span class="feat__num">03</span>
+            <h3>Cat care and support</h3>
+            <p>With a hospital full of cat lovers, your cat will receive plenty of cuddles.</p>
+            <ul class="chips"><li>Cat boarding</li><li>Rescue and adoption</li><li>Grooming</li><li>Euthanasia support</li></ul>
+          </div>
+        </article>
+      </div>
+      <p class="credit-note">Photography is illustrative and does not show Hills Animal Hospital patients, staff or facilities.</p>
+    </div>
+  </section>
+
+  <section class="section owner" id="team" aria-labelledby="owner-title">
+    <div class="wrap owner__grid">
+      <figure class="owner__media" style="margin:0">
+        <span class="owner__gold" aria-hidden="true"></span>
+        <div class="owner__frame owner__frame--ph" role="img" aria-label="Photo placeholder for Dr Sonya Bains">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="15" rx="3"/><circle cx="12" cy="12.5" r="3.5"/><path d="M8.5 5l1.5-2h4l1.5 2"/></svg>
+          <strong>Photo of Dr Sonya Bains</strong>
+          <span>Approved portrait to be supplied by Hills Animal Hospital</span>
+        </div>
+        <div class="owner__badge"><i aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5c.7-1 2-2.5 4-2.5V7c1.6 1 3 3 3 5.5C19 17 16 20 12 20s-7-3-7-7.5C5 10 6.4 8 8 7V2.5c2 0 3.3 1.5 4 2.5z"/></svg></i>Interest in feline medicine</div>
+      </figure>
+      <div>
+        <p class="eyebrow">Meet the owner</p>
+        <h2 id="owner-title">Meet Dr Sonya Bains</h2>
+        <p class="lede">A University of Sydney graduate with many years in small animal practice across Sydney's North West, and a Castle Hill local herself.</p>
+        <p>Sonya's interests are feline medicine and dermatology, with a strong passion for animal welfare. Our team builds long-term relationships with every family we care for.</p>
+        <blockquote>I find it very rewarding to be able to improve the health and wellbeing of animals. I enjoy educating clients and involving them in the care of their pets.<cite>Dr Sonya Bains, Veterinarian BVSc</cite></blockquote>
+        <div class="tags">
+          <span class="tag tag--feature">Feline medicine</span><span class="tag">Dermatology</span><span class="tag">Animal welfare</span>
+          <span class="tag">AVA member</span><span class="tag">ASAVA member</span><span class="tag">ISFM member</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="reviews" aria-labelledby="rev-title">
+    <div class="wrap">
+      <div class="rev-head">
+        <div>
+          <p class="eyebrow">Reviews</p>
+          <h2 id="rev-title">What pet owners say about us</h2>
+        </div>
+        <div class="score"><b>4.8</b><div><div class="stars" aria-hidden="true">★★★★★</div><span>Rated on Google</span></div></div>
+      </div>
+      <div class="quotes">
+        <blockquote class="quote"><div><div class="stars" aria-hidden="true">★★★★★</div><p>"I called the Hills Animal Hospital with an urgent request for an appointment and they booked me in within 2 hours."</p></div><footer>Google review</footer></blockquote>
+        <blockquote class="quote"><div><div class="stars" aria-hidden="true">★★★★★</div><p>"Dr Sonia and the team have provided the veterinary needs and taken care of both my dogs since they were pups. Now they are eight years old."</p></div><footer>Google review</footer></blockquote>
+        <blockquote class="quote"><div><div class="stars" aria-hidden="true">★★★★★</div><p>"She consistently goes above and beyond for my two Burmese cats, Coco and Levi... She takes the time to listen, explain, and truly care, which makes such a difference."</p></div><footer>Google review</footer></blockquote>
+      </div>
+    </div>
+  </section>
+
+  <section class="book" id="contact" aria-labelledby="book-title">
+    <div class="wrap">
+      <div class="book__card">
+        <div style="position:relative;z-index:1">
+          <p class="eyebrow" style="color:#d7f0f8">Book a visit</p>
+          <h2 id="book-title">Book your pet's next visit</h2>
+          <p class="lede">Appointments are available Monday to Saturday. Call us, or request an appointment and our team will be in touch.</p>
+          <ul class="book__list">
+            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Family-owned, personalised care</li>
+            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Purpose-designed hospital in Castle Hill</li>
+            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Unit 1A / 5 Salisbury Rd, Castle Hill NSW 2154</li>
+          </ul>
+        </div>
+        <div class="book__panel">
+          <h3>Call the hospital</h3>
+          <span class="book__phone">(02) 9659 1088</span>
+          <small>Appointments Monday to Saturday</small>
+          <span class="btn btn--primary" role="button" aria-disabled="true" title="Online booking link to be confirmed">Request an appointment</span>
+          <small>Online booking will connect here once the destination is confirmed.</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="ftr">
+  <div class="wrap">
+    <div class="ftr__cols">
+      <div>
+        <img class="ftr__logo" src="assets/logo.png" alt="Hills Animal Hospital" width="322" height="77" loading="lazy">
+        <p>Family-owned, personalised veterinary care for your family pets in Castle Hill.</p>
+      </div>
+      <div>
+        <h3>Services</h3>
+        <ul><li><a href="#everyday-care">Everyday care</a></li><li><a href="#surgery-diagnostics">Surgery and diagnostics</a></li><li><a href="#cat-care">Cat care and support</a></li></ul>
+      </div>
+      <div>
+        <h3>Hospital</h3>
+        <ul><li><a href="#team">Our Team</a></li><li><a href="#reviews">Reviews</a></li><li><a href="#contact">Book an appointment</a></li></ul>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <ul><li>(02) 9659 1088</li><li>info@hillsanimalhospital.com.au</li><li>Unit 1A / 5 Salisbury Rd, Castle Hill NSW 2154</li></ul>
+      </div>
+    </div>
+    <div class="disclosure">
+      <p>Homepage concept prepared by Wolf IQ for Hills Animal Hospital. Illustrative preview only, not a live website. Not affiliated with or endorsed by Hills Animal Hospital.</p>
+      <p>Pet photography from Unsplash (Unsplash License), used for illustration only.</p>
+    </div>
+  </div>
+</footer>
+
+<div class="mbar" id="mbar">
+  <a class="btn btn--primary" href="#contact">Book an appointment</a>
+  <a class="btn mbar__call" href="#contact" aria-label="Phone details">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+  </a>
+</div>
+
+<script>
+(function(){
+  var burger=document.getElementById('burger'), nav=document.getElementById('nav'), hdr=document.getElementById('hdr');
+  var item=nav.querySelector('.nav__item'), trig=document.getElementById('svcTrigger');
+  function setNav(open){nav.setAttribute('data-open',String(open));burger.setAttribute('aria-expanded',String(open));burger.setAttribute('aria-label',open?'Close menu':'Open menu');}
+  function setMenu(open){item.setAttribute('data-open',String(open));trig.setAttribute('aria-expanded',String(open));}
+  burger.addEventListener('click',function(){setNav(nav.getAttribute('data-open')!=='true');});
+  trig.addEventListener('click',function(e){e.stopPropagation();setMenu(item.getAttribute('data-open')!=='true');});
+  item.addEventListener('mouseleave',function(){item.removeAttribute('data-suppress');});
+  nav.addEventListener('click',function(e){var a=e.target.closest('a');if(a){if(item.contains(a))item.setAttribute('data-suppress','');setMenu(false);setNav(false);if(document.activeElement)document.activeElement.blur();}});
+  document.addEventListener('click',function(e){if(!item.contains(e.target))setMenu(false);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'){var wasOpen=item.getAttribute('data-open')==='true';setMenu(false);if(wasOpen)trig.focus();else if(nav.getAttribute('data-open')==='true'){setNav(false);burger.focus();}}});
+  window.addEventListener('scroll',function(){hdr.classList.toggle('is-scrolled',window.scrollY>8);},{passive:true});
+  var mbar=document.getElementById('mbar'), contact=document.getElementById('contact');
+  var heroCta=document.querySelector('.hero__cta'), vis={};
+  function upd(){mbar.classList.toggle('is-hidden',!!(vis.hero||vis.contact));}
+  if('IntersectionObserver' in window){
+    new IntersectionObserver(function(en){en.forEach(function(x){vis[x.target===contact?'contact':'hero']=x.isIntersecting;});upd();},{threshold:.1}).observe(contact);
+    new IntersectionObserver(function(en){en.forEach(function(x){vis.hero=x.isIntersecting;});upd();},{threshold:0}).observe(heroCta);
+  }
+})();
+</script>
+</body>
+</html>

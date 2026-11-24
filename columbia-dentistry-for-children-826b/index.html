@@ -176,7 +176,7 @@ a.btn--primary:hover{box-shadow:0 7px 0 var(--ink)}
 @media(max-width:860px){.prize__in{grid-template-columns:1fr;text-align:left;gap:20px}}
 
 /* Visit */
-.visit__grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:40px;align-items:stretch}
+.visit__grid{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:stretch}
 .visit__card{background:var(--ink);color:#fff;border-radius:30px;padding:clamp(32px,4vw,52px);position:relative;overflow:hidden}
 .visit__card::after{content:"";position:absolute;right:-40px;bottom:-40px;width:200px;height:200px;background:var(--tiger);border-radius:50%;opacity:.95}
 .visit__card h2{color:#fff}
@@ -184,11 +184,11 @@ a.btn--primary:hover{box-shadow:0 7px 0 var(--ink)}
 .visit__card address{font-style:normal;font-size:1.1rem;color:#fff;margin:20px 0 26px;position:relative;z-index:1}
 .visit__card .phone{font-family:var(--display);font-size:2rem;color:var(--tiger);margin:0 0 26px}
 .visit__card .acts{display:flex;flex-wrap:wrap;gap:12px;position:relative;z-index:1}
-.map{border-radius:30px;overflow:hidden;border:2.5px solid var(--ink);box-shadow:8px 8px 0 var(--tiger);height:300px;margin-top:18px;background:var(--sky);position:relative}
+.map{border-radius:30px;overflow:hidden;border:2.5px solid var(--ink);box-shadow:8px 8px 0 var(--tiger);height:190px;margin-top:16px;max-width:440px;box-shadow:6px 6px 0 var(--tiger);background:var(--sky);position:relative}
 .map iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
-@media(max-width:960px){.visit__grid{grid-template-columns:1fr}.map{height:240px}}
+@media(max-width:960px){.visit__grid{grid-template-columns:1fr}.map{height:180px}.mapcol{max-width:none}}
 
-.mapcol{align-self:center}
+.mapcol{align-self:center;max-width:440px}
 .mapcol h3{margin-bottom:.2em}
 .mapcol > p:not(.kicker){margin:0}
 /* Services dropdown */
@@ -199,7 +199,7 @@ a.btn--primary:hover{box-shadow:0 7px 0 var(--ink)}
 .dd__menu{position:absolute;top:calc(100% + 16px);left:50%;transform:translateX(-50%);width:320px;background:#fff;border:2.5px solid var(--ink);border-radius:22px;box-shadow:6px 6px 0 var(--tiger);padding:10px;margin:0;list-style:none;display:none;z-index:150}
 .dd__menu::before{content:"";position:absolute;left:0;right:0;top:-20px;height:20px}
 .dd[data-open="true"] .dd__menu{display:block}
-@media(hover:hover) and (min-width:961px){.dd:hover .dd__menu{display:block}.dd:hover .dd__btn svg{transform:rotate(180deg)}}
+@media(min-width:961px){.dd:hover .dd__menu,.dd:focus-within .dd__menu{display:block}.dd:hover .dd__btn svg{transform:rotate(180deg)}}
 .nav .dd__menu a{display:block;padding:12px 14px;border-radius:14px;text-decoration:none;color:var(--ink);border-bottom:none}
 .nav .dd__menu a::after{display:none}
 .dd__menu a:hover,.dd__menu a:focus-visible{background:var(--cream)}
@@ -259,7 +259,7 @@ h3[id^="svc-"]{scroll-margin-top:320px}
 .scard.dark p{color:#e3d7cc}
 .scard .big{font-family:var(--display);font-size:1.8rem;color:#fff;margin:0}
 .scard .more{font-weight:800;color:var(--ink);text-decoration:none;display:inline-flex;gap:8px;align-items:center}
-.scard .mini-map{border-radius:16px;overflow:hidden;height:150px;position:relative;margin-top:14px;border:2px solid var(--ink)}
+.scard .mini-map{border-radius:16px;overflow:hidden;height:110px;position:relative;margin-top:14px;border:2px solid var(--ink)}
 .scard .mini-map iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 .steps{display:grid;gap:22px;counter-reset:s;margin:0;padding:0;list-style:none}
 .steps li{counter-increment:s;display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:start;background:#fff;border:2.5px solid var(--ink);border-radius:24px;padding:24px;box-shadow:6px 6px 0 var(--tiger)}
@@ -632,6 +632,9 @@ h3[id^="svc-"]{scroll-margin-top:320px}
   }
   var dd=document.getElementById('dd'), ddb=document.getElementById('dd-btn');
   function ddSet(o){dd.setAttribute('data-open',String(o));ddb.setAttribute('aria-expanded',String(o));}
+  var ddT;
+  dd.addEventListener('mouseenter',function(){if(window.innerWidth>960){clearTimeout(ddT);ddSet(true);}});
+  dd.addEventListener('mouseleave',function(){if(window.innerWidth>960){ddT=setTimeout(function(){ddSet(false);},180);}});
   ddb.addEventListener('click',function(e){e.stopPropagation();ddSet(dd.getAttribute('data-open')!=='true');});
   document.addEventListener('keydown',function(e){if(e.key==='Escape'){ddSet(false);ddb.focus();}});
   document.addEventListener('click',function(e){

@@ -289,6 +289,28 @@ a:focus-visible,button:focus-visible,[role="button"]:focus-visible{outline:3px s
 .vals h3,.tribe h3{font-size:1.05rem}
 .vals p,.tribe p{margin:0;font-size:.92rem}
 
+
+/* Prominent nav */
+.hdr{background:rgba(5,8,10,.55);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-bottom:1px solid rgba(63,208,201,.25)}
+.hdr__in{min-height:82px}
+.nav a,.dd__btn{font-family:var(--display);font-weight:700;font-size:1rem;letter-spacing:.06em;text-transform:uppercase;position:relative}
+.nav>a:not(.btn)::after,.dd__btn::before{content:"";position:absolute;left:0;right:0;bottom:-8px;height:2px;border-radius:2px;background:linear-gradient(90deg,var(--turq),var(--magenta));transform:scaleX(0);transition:transform .2s}
+.nav>a:not(.btn):hover::after,.nav>a.is-active::after,.dd:hover .dd__btn::before,.dd__btn.is-active::before{transform:scaleX(1)}
+.nav>a.is-active,.dd__btn.is-active{color:var(--turq)}
+.dd__menu{top:calc(100% + 18px)}
+.dd__menu a{font-size:.92rem}
+.nav a.btn--primary{font-size:1rem;padding:12px 24px}
+.hdr .wrap{max-width:1380px}
+.brand{flex-shrink:0}
+@media(min-width:1181px){.brand span{display:none}.brand img{width:54px;height:54px}}
+@media(min-width:1181px) and (max-width:1400px){.nav{gap:15px}.nav a,.dd__btn{font-size:.88rem;letter-spacing:.04em}.nav a.btn--primary{font-size:.9rem;padding:11px 18px}}
+@media(max-width:1180px){
+  .nav{inset:82px 12px auto 12px;background:rgba(6,11,13,.97)}
+  .nav a,.dd__btn{font-size:1.05rem}
+  .nav>a:not(.btn)::after,.dd__btn::before{display:none}
+  .dd__menu a{font-size:.95rem}
+}
+
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
@@ -793,7 +815,8 @@ a:focus-visible,button:focus-visible,[role="button"]:focus-visible{outline:3px s
     if(isPage){window.scrollTo(0,0);document.title=(target.getAttribute('aria-label')||'Turquoise Party')+' | Turquoise Party concept';var h=target.querySelector('h1');if(h){h.setAttribute('tabindex','-1');h.focus({preventScroll:true});}if(sub){var s=document.getElementById(sub);if(s)s.scrollIntoView();}}
     else{document.title='Turquoise Party | Homepage concept';if(target&&id!=='top'){target.scrollIntoView();}else{window.scrollTo(0,0);}}
   }
-  window.addEventListener('hashchange',route);route();
+  function active(){var h=location.hash||'#top';if(h==='#page-about-tribe')h='#page-about';document.querySelectorAll('.nav a,.dd__btn').forEach(function(a){a.classList.remove('is-active');});var a=document.querySelector('.nav a[href="'+h+'"]:not(.btn)');if(a){var dd=a.closest('.dd');(dd?dd.querySelector('.dd__btn'):a).classList.add('is-active');}}
+  window.addEventListener('hashchange',function(){route();active();});route();active();
 })();
 
 (function(){
